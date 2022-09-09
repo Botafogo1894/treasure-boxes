@@ -9,7 +9,10 @@ The implementation is based on a [state-of-the-art academic paper](https://arxiv
 
 The template ultimately generates deeper insights about conversion histories and allows you to build the following dashboard, for example:
 
-![dashboard](./docs/images/dashboard.png)
+<img width="777" alt="Screen Shot 2022-09-09 at 6 08 02 PM" src="https://user-images.githubusercontent.com/40249921/189452556-7741fa50-b534-4920-a769-3976134a3c83.png">
+
+<img width="777" alt="Shapely3" src="https://user-images.githubusercontent.com/40249921/189452995-3099a101-da6e-4112-b820-5023a9da147c.png">
+
 
 ## Input
 
@@ -105,7 +108,8 @@ In a column called `days_before_conversion`, `0` indicates, for example, the eff
 
 By visualizing the values as follows, this table gives insights into how different channels perform throughout the customer journey to conversion and which ones are more effective as a first-touch vs. last-touch on that journey.
 
-![shapley](./docs/images/shapley_by_day.png)
+<img width="758" alt="Shapely2" src="https://user-images.githubusercontent.com/40249921/189453043-082e3a09-05e1-40ac-8a99-052f25d85512.png">
+
 
 ### Table: `shapley_channel`
 
