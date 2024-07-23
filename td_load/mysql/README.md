@@ -1,8 +1,8 @@
 # Workflow: td_load example (MySQL)
 
-This example workflow ingests data in daily basis, using [Treasure Data's Data Connector for MySQL](https://docs.treasuredata.com/articles/data-connector-mysql) with [td_load](http://docs.digdag.io/operators.html#td-load-treasure-data-bulk-loading) operator.
+This example workflow ingests data in daily basis, using [Treasure Data's Data Connector for MySQL](https://docs.treasuredata.com/display/public/INT/MySQL+Import+Integration) with [td_load](https://docs.digdag.io/operators.html#td-load-treasure-data-bulk-loading) operator.
 
-The workflow also uses [Secrets](https://docs.treasuredata.com/articles/workflows-secrets) feature, so that you don't have to include your database credentials to your workflow files.
+The workflow also uses [Secrets](https://docs.treasuredata.com/display/public/PD/Workflows+and+Machine+Learning-secrets) feature, so that you don't have to include your database credentials to your workflow files.
 
 # How to Run
 
@@ -25,7 +25,18 @@ Now, you can upload the workflow and trigger the session manually.
     
     # Run
     $ td wf start td_load_example daily_load --session now
-    
+
+# Required Keys
+
+| Keys     | Description |
+| -------- | ----------- |
+| host     | Host information for MySQL. |
+| user     | User name. |
+| database | Database name. |
+
+When you set `user_custom_query` is true, `query` option is required.
+When you set `user_custom_query` is false, `select` and `table` options are required.
+
 # Next Step
 
 If you have any questions, please contact support@treasure-data.com.

@@ -9,11 +9,11 @@ Treasure Boxes offers a pre-built pieces of code for developing, optimizing, and
 * Machine Learning Box - Custom Machine Learning Catalogs you can figure out values from your data
 * Tool Box - Tools better to utilize Treasure CDP
 
-# How to Request a new Box (TBD)
+# How to Request a new Box
 
-Submitting a Box request does not mean that Treasure Data will create the requested Box, but let's us know that our customers want it. All new Box requests will be logged and prioritized by the Treasure Boxes team. 
+Submitting a Box request does not mean that Treasure Data will create the requested Box, but lets us know that our customers want it. All new Box requests will be logged and prioritized by the Treasure Boxes team.
 
-Link is TBD
+Link is https://boxes.treasuredata.com/hc/en-us/
 
 # Contributing Guide
 
@@ -27,7 +27,7 @@ In short, when you submit code changes, your submissions are understood to be un
 
 Anyone can access this repository. Before you contribute to us, please verify whether your contribute doesn't contain any private information.
 
-## Steps to send a new box or fix a existing box
+## Steps to send a new box or fix an existing box
 
 ### Fork the code
 
@@ -38,12 +38,12 @@ Firstly you need a local fork of the the project, so go ahead and press the “f
 Now you need a copy locally, so find the “Clone with HTTPS” in the right hand column and use that to clone locally using a terminal:
 
 ```
-$ git clone https://github.com/toru-takahashi/treasure-boxes.git
+$ git clone https://github.com/treasure-data/treasure-boxes.git
 ```
 
 ### Create a new branch
 
-Firest, change into the new project’s directory: 
+First, change into the new project’s directory:
 
 ```
 $ cd treasure-boxes
@@ -69,7 +69,7 @@ If you go to the project directory and execute the command `git status`, you'll 
 Add those changes to the branch you just created using the git add command:
 
 ```
-$ git add <YOU ADDED FILE>
+$ git add <FILE YOU ADDED>
 ```
 
 Now commit those changes using the git commit command:

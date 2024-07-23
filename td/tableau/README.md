@@ -1,6 +1,6 @@
 # Workflow: td example (Result Output to Tableau)
 
-This example workflow ingests data using [Tableau Server with Treasure Data](https://docs.treasuredata.com/articles/tableau-server) or [Tableau Online with Treasure Data](https://docs.treasuredata.com/articles/tableau-online) with [td](http://docs.digdag.io/operators/td.html) operator.
+This example workflow ingests data using [Tableau Server with Treasure Data](https://docs.treasuredata.com/display/public/INT/Tableau+Server+Export+Integration) or [Tableau Online with Treasure Data](https://docs.treasuredata.com/display/public/INT/Tableau+Online+Export+Integration) with [td](https://docs.digdag.io/operators/td.html) operator.
 
 # Prerequisites
 
@@ -21,7 +21,7 @@ First, please upload your workflow project by `td wf push` command.
     # Upload
     $ td wf push tableau
 
-If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](http://docs.digdag.io/command_reference.html#secrets)
+If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](https://docs.digdag.io/command_reference.html#secrets)
 
     # Set Secrets
     $ td wf secrets --project tableau --set key
@@ -51,7 +51,12 @@ Available parameters for `result_settings` are here.
 - mode (string(append|replace), required)
 - legacy (string('false'|'true'))
 - target_type (string(hyper|tde), optional)
+- chunk_size_in_mb (integer, optional, default: 100, min: 10, max: 1000)
+- maximum_retries (integer, default: 100, min: 10, max: 1000)
+- initial_retry_interval_millis (integer, unit: milli-second, default: 1000)
+- maximum_retry_interval_millis (integer, default: 60000)
 
 # Next Step
+
 
 If you have any questions, please contact support@treasuredata.com.

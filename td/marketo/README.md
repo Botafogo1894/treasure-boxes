@@ -1,11 +1,11 @@
 # Workflow: td example (Result Output to Marketo)
 
-This example workflow exports TD job results into Marketo [Treasure Data's Writing Job Results into Marketo](https://support.treasuredata.com/hc/en-us/articles/360001536087-Writing-Job-Results-into-Marketo) with [td](http://docs.digdag.io/operators/td.html) operator.
+This example workflow exports TD job results into Marketo [Treasure Data's Writing Job Results into Marketo](https://docs.treasuredata.com/display/public/INT/Marketo+Export+Integration) with [td](https://docs.digdag.io/operators/td.html) operator.
 
 # Prerequisites
 
 The Marketo connection name is required for use in the workflow file.
-Create a new Marketo Connection using [Create Connection](https://docs.treasuredata.com/articles/result-into-marketo#step-1-create-a-new-connection) or use your existing connection. 
+Create a new Marketo Connection using [Create Connection](https://docs.treasuredata.com/display/public/INT/Marketo+Export+Integration#Create-a-New-Connection) or use your existing connection.
 
 
 # How to Run
@@ -29,7 +29,7 @@ You can trigger the session manually.
 # Supplemental
 
 Available parameters for `result_settings` are here.
-
+- mode: Connector mode, could be delete_leads or upload_leads (string, required, default to upload_leads)
 - headers: description (string, default: null. When empty, the first row will be headers)
 - list_id: The ID of the destination list where Leads are added (string, required)
 - lookup_field: The optional field that can be used for de-duplication (string, optional, default to email)
@@ -40,8 +40,9 @@ Available parameters for `result_settings` are here.
 - http_timeout_millis: Max http waiting time in milliseconds (integer, optional)
 - upload_chunk_size_in_bytes: Max upload chunk size in bytes (integer, optional)
 - batch_max_wait_msec: Batch max wait in milliseconds (integer, optional)
+- ignore_invalid_records: The option can use in delete_leads mode, that indicate that skip invalid record during process`(boolean, optional, default false)
 
-For more details on Result output to Marketo, please see [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360001536087-Writing-Job-Results-into-Marketo)
+For more details on Result output to Marketo, please see [Treasure Data documentation](https://docs.treasuredata.com/display/public/INT/Marketo+Export+Integration)
 
 # Next Step
 

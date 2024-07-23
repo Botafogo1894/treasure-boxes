@@ -1,6 +1,8 @@
 # Workflow: td example (Result Output to s3)
 
-This example workflow ingests data in daily basis, using [Treasure Data's Writing Job Results into AWS S3](https://docs.treasuredata.com/articles/result-into-s3) with [td](http://docs.digdag.io/operators/td.html) operator.
+**Note: We suggest [S3 v2 integration](https://docs.treasuredata.com/display/public/INT/Amazon+S3+Export+Integration+v2) instead of this integration (S3 v1).**
+
+This example workflow ingests data in daily basis, using [Treasure Data's Writing Job Results into AWS S3](https://docs.treasuredata.com/display/public/INT/Amazon+S3+Export+Integration) with [td](https://docs.digdag.io/operators/td.html) operator.
 
 # Prerequisites
 
@@ -19,7 +21,7 @@ First, please upload your workflow project by `td wf push` command.
     # Upload
     $ td wf push sample_project
 
-If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](http://docs.digdag.io/command_reference.html#secrets)
+If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](https://docs.digdag.io/command_reference.html#secrets)
 
     # Set Secrets
     $ td wf secrets --project sample_project --set key
@@ -48,13 +50,13 @@ Available parameters for `result_settings` are here.
 - format: (string(csv|tsv), default csv)
 - compression: (string(None|gz), default None)
 - header: (boolean, default true)
-- delimiter: (string(","|"tab"|"|"), default ",")
+- delimiter: (string(","|"\t"|"|"), default ",")
 - "null": (string("empty"|"\\N"|NULL|null|any characters), default "empty")
 - newline: (string(\r\n(CRLF)|\r(CR)|\n(LF)), default \r\n(CRLF))
 - quote: (string, optional)
 - escape: (string, optional)
 
-For more details, please see [Treasure Data documentation](https://docs.treasuredata.com/articles/result-into-s3#usage)
+For more details, please see [Treasure Data documentation](https://docs.treasuredata.com/display/public/INT/Amazon+S3+Export+Integration#usage)
 
 # Next Step
 

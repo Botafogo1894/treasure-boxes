@@ -1,6 +1,6 @@
 # Workflow: td example (Result Output to BigQuery)
 
-This example workflow ingests data using [Treasure Data's Writing Job Results into Google BigQuery](https://docs.treasuredata.com/articles/result-into-google-bigquery) with [td](http://docs.digdag.io/operators/td.html) operator.
+This example workflow ingests data using [Treasure Data's Writing Job Results into Google BigQuery](https://docs.treasuredata.com/display/public/INT/Google+BigQuery+Export+Integration) with [td](https://docs.digdag.io/operators/td.html) operator.
 
 # Prerequisites
 
@@ -19,7 +19,7 @@ First, please upload your workflow project by `td wf push` command.
     # Upload
     $ td wf push td_bigquery
 
-If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](http://docs.digdag.io/command_reference.html#secrets)
+If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](https://docs.digdag.io/command_reference.html#secrets)
 
     # Set Secrets
     $ td wf secrets --project td_bigquery --set key
@@ -46,14 +46,14 @@ Available parameters for `result_settings` are here.
 - project: (string, required)
 - dataset: (string, required)
 - table: (string, required)
-- auto_create_table: (boolean, default false)
 - mode: (string, optional, defaut append, options: append, replace, replace_backup, delete_in_advance)
+- auto_create_table: (boolean, optional)
 - max_bad_records: (int, optional, default 0)
 - ignore_unknown_values: (boolean, default false)
 - allow_quoted_newlines: (boolean, default false)
 - schema_file: (string(json), required)
 
-For more details, please see [Treasure Data documentation](https://docs.treasuredata.com/articles/result-into-google-bigquery#use-from-cli)
+For more details, please see [Treasure Data documentation](https://docs.treasuredata.com/display/public/INT/Google+BigQuery+Export+Integration)
 
 # Next Step
 

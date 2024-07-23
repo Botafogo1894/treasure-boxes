@@ -1,6 +1,6 @@
 # Workflow: td example (Result Output to Google Cloud Storage)
 
-This example workflow ingests data using [Treasure Data's Writing Job Results into Google Cloud Storage](https://docs.treasuredata.com/articles/result-into-google-cloud-storage) with [td](http://docs.digdag.io/operators/td.html) operator.
+This example workflow ingests data using [Treasure Data's Writing Job Results into Google Cloud Storage](https://docs.treasuredata.com/display/public/INT/Google+Cloud+Storage+Export+Integration) with [td](https://docs.digdag.io/operators/td.html) operator.
 
 # Prerequisites
 
@@ -19,7 +19,7 @@ First, please upload your workflow project by `td wf push` command.
     # Upload
     $ td wf push td_gcs
 
-If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](http://docs.digdag.io/command_reference.html#secrets)
+If you want to mask setting, please set it by `td wf secrets` command. For more details, please see [digdag documentation](https://docs.digdag.io/command_reference.html#secrets)
 
     # Set Secrets
     $ td wf secrets --project td_gcs --set key
@@ -55,7 +55,7 @@ Available parameters for `result_settings` are here.
 - newline: (string(CRLF|CR|LF), default CRLF)
 - application_name: (string, Arbitrary client name associated with API requests)
 
-For more details, please see [Treasure Data documentation](https://docs.treasuredata.com/articles/result-into-google-cloud-storage#use-from-cli)
+For more details, please see [Treasure Data documentation](https://docs.treasuredata.com/display/public/INT/Exporting+Data+from+Google+Cloud+Storage+CLI)
 
 # Next Step
 

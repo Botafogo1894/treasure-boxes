@@ -1,0 +1,68 @@
+_export:
+  !include : common/settings.yaml
+
++initial_database_and_tables:
+    +create_db:
+        td_ddl>: 
+        create_databases: [ "${td.database}" ]
+
++ingest_connection:
+    py>: scripts.ingest_connection.run
+    dest_db: ${td.database}
+    dest_table: ${td.tables.connections}
+    api_endpoint: ${td.api_endpoint}
+    docker:
+        image: "digdag/digdag-python:3.10.1"
+    _env:
+        TD_API_KEY: ${secret:td.apikey}
+
++ingest_connection_details:
+    +get_all_connection:
+        td>:
+        query: SELECT ARRAY_JOIN(ARRAY_AGG(name), ',') AS names FROM connections
+        store_last_results: true
+
+    +ingest_connection_details:
+        py>: scripts.ingest_connection_details.run
+        dest_db: ${td.database}
+        dest_table: ${td.tables.connections_details}
+        names: ${td.last_results.names}
+        api_endpoint: ${td.api_endpoint}
+        docker:
+            image: "digdag/digdag-python:3.10.1"
+        _env:
+            TD_API_KEY: ${secret:td.apikey}
+
++ingest_schedule:
+    py>: scripts.ingest_schedule.run
+    dest_db: ${td.database}
+    dest_table: ${td.tables.schedules}
+    api_endpoint: ${td.api_endpoint}
+    docker:
+        image: "digdag/digdag-python:3.10.1"
+    _env:
+        TD_API_KEY: ${secret:td.apikey}
+
++ingest_source:
+    py>: scripts.ingest_sources.run
+    dest_db: ${td.database}
+    dest_table: ${td.tables.sources}
+    api_endpoint: ${td.api_endpoint}
+    docker:
+        image: "digdag/digdag-python:3.10.1"
+    _env:
+        TD_API_KEY: ${secret:td.apikey}
+
++initial_inget_jobs:
+  py>: scripts.ingest_job.run
+  session_unixtime: ${session_unixtime}
+  dest_db: ${td.database}
+  dest_table: ${td.tables.jobs}
+  page_size: 1000
+  lower_job_id: 1675368283
+  api_endpoint: ${td.api_endpoint}
+  if_exists: 'overwrite'
+  docker:
+    image: "digdag/digdag-python:3.10.1"
+  _env:
+    TD_API_KEY: ${secret:td.apikey}

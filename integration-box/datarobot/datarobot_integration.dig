@@ -1,16 +1,15 @@
 +create_table_on_td:
   docker:
-    image: "digdag/digdag-python:3.7.3-stretch"
+    image: "digdag/digdag-python:3.9.3-stretch"
   _env:
-      DR_API_TOKEN: ${secret:datarobot.apikey}
+      DR_USERNAME: ${secret:dr.username}
+      DR_PRED_HOST: ${secret:dr.prediction_host}
+      DR_CLOUD_KEY: ${secret:dr.cloudkey}
+      DR_API_KEY: ${secret:dr.apikey}
       TD_API_KEY: ${secret:td.apikey}
-      TD_USERNAME: ${secret:td.username}
-      TD_PASSWORD: ${secret:td.password}
-      TD_API_SERVER: https://api.treasuredata.com/
-      SPARK_LOCAL_IP: 127.0.0.1  
-  py>: scripts.datarobot.upload
-  database: datarobot
-  table: pred_iris
-  project_id: 5d3e76e931c473290afae6fd
-  model_id: 5d3e7b875844414bffba1579
-  datasource_id: 5d3e76d06cd83a00139c6a72
+  py>: scripts.datarobot.main
+  sql: ${td.sql}
+  database: ${td.database}
+  table: ${td.table}
+  target: ${dr.target}
+  deployment_id: ${dr.deployment_id}

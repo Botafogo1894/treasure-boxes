@@ -1,0 +1,19 @@
+_export:
+  !include : common/settings.yaml
+  attempt_ids:
+    - 605508773
+    - 605506079
+
++manual_ingest_attempt_task:
+  py>: scripts.ingest_task.run
+  session_unixtime: ${session_unixtime}
+  dest_db: ${td.database}
+  dest_table: ${td.tables.tasks}
+  attempt_ids: ${attempt_ids}
+  api_endpoint: ${td.api_endpoint}
+  workflow_endpoint: ${td.workflow_endpoint}
+  docker:
+    image: "digdag/digdag-python:3.10.1"
+  _env:
+    TD_API_KEY: ${secret:td.apikey}
+

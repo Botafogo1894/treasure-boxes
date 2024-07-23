@@ -1,0 +1,18 @@
+timezone: Asia/Tokyo
+
+_export:
+  database: {{Name of database has a table for LINE UserIDs}}
+  table: {{Name of table for LINE UserIDs}}
+  user_id_column: {{Name of column for LINE UserIDs}}
+  filename: {{Name of output CSV file you want to set}}
+
++upload_userlist_to_done:
+  py>: post_userlist_to_done.main
+  _env:
+    # TD_ENDPOINT: api.treasuredata.co.jp -- This param is essesential when you use an AWS account on Tokyo region
+    TD_API_KEY: ${secret:td.apikey}
+    DONE_API_KEY: ${secret:api_key} 
+    DONE_SERVICE_ID: ${secret:service_id}
+    DONE_ACID: ${secret:acid}
+  docker:
+    image: "digdag/digdag-python:3.9"

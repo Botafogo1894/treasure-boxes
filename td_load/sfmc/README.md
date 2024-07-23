@@ -1,8 +1,8 @@
 # Workflow: td_load Example (Salesforce Marketing Cloud)
 
-This example workflow ingests data in daily basis incrementally and fetches data from yesterday for 1 day, using [Treasure Data's Data Connector for SFMC](https://docs.treasuredata.com/articles/data-connector-salesforce-marketing-cloud) with [td_load](http://docs.digdag.io/operators.html#td-load-treasure-data-bulk-loading) operator.
+This example workflow ingests data in daily basis incrementally and fetches data from yesterday for 1 day, using [Treasure Data's Data Connector for SFMC](https://docs.treasuredata.com/display/public/INT/Salesforce+Import+Integration-marketing-cloud) with [td_load](https://docs.digdag.io/operators.html#td-load-treasure-data-bulk-loading) operator.
 
-The workflow also uses [Secrets](https://docs.treasuredata.com/articles/workflows-secrets) feature, so that you don't have to include your datasource credentials to your workflow files.
+The workflow also uses [Secrets](https://docs.treasuredata.com/display/public/PD/Workflows+and+Machine+Learning-secrets) feature, so that you don't have to include your datasource credentials to your workflow files.
 
 # How to Run
 
@@ -40,6 +40,17 @@ Now, you can trigger the session manually.
     # Run
     $ td wf start td_load_example daily_load --session now
     
+# Required Keys
+
+| Keys     | Description |
+| -------- | ----------- |
+| client_id | Client ID for SFMC. |
+| client_secret | Client secret for SFMC. |
+| auth_uri | Authentication url. |
+| de_name | Data Extention name. |
+
+If you use SFMC enhanced package ([SFMC v2 integration](https://docs.treasuredata.com/display/public/INT/Salesforce+Marketing+Cloud+Import+Integration+CLI+v2)), set `auth_type: v2`, which option is `v1` to default.
+
 # Next Step
 
 If you have any questions, please contact support@treasure-data.com.

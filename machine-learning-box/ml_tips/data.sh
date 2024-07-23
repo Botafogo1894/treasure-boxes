@@ -1,13 +1,13 @@
 #!/bin/bash
 
-set -ex
+set -x
 
 if [ -z $(which td) ]; then
   echo "You first need to install Treasure Data Toolbelt: http://toolbelt.treasuredata.com/"
   exit 1
 fi
 
-TD_OPT="-c ${HOME}/.td/td.hivemall.conf"
+TD_OPT=""
 
 td ${TD_OPT} db:create ml_tips
 td ${TD_OPT} table:create ml_tips titanic
